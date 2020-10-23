@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap-table.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstarp/bootstrap.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstarp/bootstrap-table.css}" />
+</head>
+<body>
+    <div class="container">
+        <h1>添加订单</h1>
+        <form class="form-horizontal" th:action="@{/saveOrder1}" method="post">
+            <input type="hidden" name="userid" th:value="${order.userid}" />
+            <div class="form-group">
+                <label for="usernumber" class="col-sm-2 control-label">编号</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="usernumber"  id="usernumber" placeholder="usernumber" th:value="${order.usernumber}"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="username" class="col-sm-2 control-label">名称</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="username"  id="username" placeholder="username" th:value="${order.username}"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="userage" class="col-sm-2 control-label">价格</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="userage"  id="userage" placeholder="userage" th:value="${order.userage}"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="userdate" class="col-sm-2 control-label">时间</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" name="userdate"  id="userdate" placeholder="userdate" th:value="${order.userdate}"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="userfanshi" class="col-sm-2 control-label">支付方式</label>
+                <div class="col-sm-10">
+                <select name="userfanshi" id="userfanshi"
+                        class="form-control"  th:value="${order.userfanshi}">
+                    <option th:selected="${order.userfanshi=='自己选'}" value='自己选'>--自己选--</option>
+                    <option th:selected="${order.userfanshi=='支付宝'}" value='支付宝'>支付宝</option>
+                    <option th:selected="${order.userfanshi=='微信'}" value='微信'>微信</option>
+                    <option th:selected="${order.userfanshi=='刷卡'}" value='刷卡'>刷卡</option>
+                </select>
+                </div>
+                <!--<div class="col-sm-10">
+                    <input type="text" class="form-control" name="userfanshi"  id="userfanshi" placeholder="userfanshi" th:value="${order.userfanshi}"/>
+                </div>-->
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <input type="submit" value="Submit" class="btn btn-info" />
+                    <a th:href="@{/selectAll1}" class="btn btn-info">Back</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

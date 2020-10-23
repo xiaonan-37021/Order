@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap-table.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstarp/bootstrap.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstarp/bootstrap-table.css}" />
+</head>
+<body>
+    <div class="container">
+        <h1>添加订单</h1>
+        <form class="form-horizontal" th:action="@{/saveOrder}" method="post">
+            <input type="hidden" name="userid" th:value="${order.userid}" />
+            <div class="form-group">
+                <label for="username" class="col-sm-2 control-label">名称</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="username"  id="username" placeholder="username" th:value="${order.username}"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="userbum" class="col-sm-2 control-label">部门</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="userbum"  id="userbum" placeholder="createTime" th:value="${order.userbum}"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="userdate" class="col-sm-2 control-label">入职日期</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" name="userdate"  id="userdate" placeholder="createTime" th:value="${order.userdate}"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="usergangw" class="col-sm-2 control-label">岗位</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="usergangw"  id="usergangw" placeholder="createTime" th:value="${order.usergangw}"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="userzhiz" class="col-sm-2 control-label">职责</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="userzhiz"  id="userzhiz" placeholder="createTime" th:value="${order.userzhiz}"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <input type="submit" value="Submit" class="btn btn-info" />
+                    <a th:href="@{/selectAll}" class="btn btn-info">Back</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
